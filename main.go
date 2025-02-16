@@ -18,8 +18,6 @@ const defaultLumiHost = "https://luminous.alienpls.org"
 //
 // Response: this will proxy response, status, headers from upstream
 func proxyHandler(w http.ResponseWriter, r *http.Request) {
-	w.WriteHeader(200)
-
 	channelNameRaw := r.PathValue("name")
 	fmt.Printf("NameRaw is %#v\n", channelNameRaw)
 	channelName := strings.TrimSuffix(channelNameRaw, ".m3u8")
